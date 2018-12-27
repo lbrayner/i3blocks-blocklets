@@ -2,11 +2,15 @@
 
 # FONT AWESOME 4.7.0
 
-internet(){
+internet1(){
     ping -W 1 -c 1 8.8.8.8 >/dev/null 2>&1 # google's dns
 }
 
-if ! internet
+internet2(){
+    ping -W 1 -c 1 208.67.222.222 >/dev/null 2>&1 # opendns
+}
+
+if ! internet1 && ! internet2
 then
     # echo  # frown
     echo "<span color='yellow'></span>" # exclamation-triangle
